@@ -1,0 +1,26 @@
+version: "2"
+services:
+  frontend:
+    container_name: frontend
+    build: nginx
+    ports: 
+      - "80:80"
+    links:
+      - backend
+    volumes:
+      -  /home/pi/Docker/nginx_nodejs_mongodb_app/dist/wetter:/usr/share/nginx/html
+
+  backend:
+    container_name: backend
+    restart: always
+    build: NodeJsServer
+    ports:
+      - "4000:4000"
+    links:
+      - mongo
+  
+  mongo:
+    container_name: mongo
+    image: andresvidal/rpi3-mongodb3
+    ports:
+      - "27017:27017"

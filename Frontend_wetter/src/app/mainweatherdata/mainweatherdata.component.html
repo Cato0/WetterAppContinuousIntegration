@@ -1,0 +1,58 @@
+<div class="divmenu">
+	<div class="forecast-container">
+		<div class="today forecast">
+			<div class="forecast-header">
+				<div class="day headingStyle">{{wItem0.weekday}}</div>
+				<div class="date headingStyle">{{wItem0.date}}</div>
+			</div> <!-- .forecast-header -->
+			<div class="forecast-content">
+				<div class="location">{{wItem0.City_name}}</div>
+				<div class="degreeNEW divDegreeHeightFirstday">
+					<div class="firstday">{{wItem0.temperature}}<sup>o</sup>C</div>
+					<div class="firstday">
+						<img src={{wItem0.icon}} alt="" width=150>
+					</div>
+				</div>
+				<div class="divdiagramm">
+					<!-- %%%%%%%%%% Add third Component 'weatherdiagramm' %%%%%%%%%% -->
+					<app-weatherdiagramm></app-weatherdiagramm>
+				</div>
+				<div class="divMainButtons">
+					<!-- <button class="btnMainDiagramm" type="button" id="showDataSummary" (click)='this.onMainButtonClicked()'>=</button> -->
+					<button class="btnMainDiagramm" type="button" id="showTemperature" (click)="this.onTempButtonClicked()"><sup>o</sup>C</button>
+					<button class="btnMainDiagramm" type="button" id="showRain" (click)="this.onRainButtonClicked()"><img src="assets/img/icon-umberella.png" alt=""></button>
+					<button class="btnMainDiagramm" type="button" id="showWind" (click)="this.onWindButtonClicked()"><img src="assets/img/icon-wind.png" alt=""></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="forecast" *ngFor="let x of weatherItems; let i = index">
+			<div class="forecast-header">
+				<div class="day headingStyle">{{weatherItems[i].weekday}}</div>
+			</div> <!-- .forecast-header -->
+			<div class="forecast-content">
+				<div class="forecast-icon">
+					<img src={{weatherItems[i].icon}} alt="" width=80>
+				</div>
+				<div class="degreeNEW">{{weatherItems[i].temperature}}<sup>o</sup>C</div>
+				<div>
+					<div class="detailsofweather">min:</div>
+					<div class="detailsofweather"><small>{{weatherItems[i].minTemp}}<sup>o</sup></small></div>
+				</div>
+				<div>
+					<div class="detailsofweather">max:</div>
+					<div class="detailsofweather"><small>{{weatherItems[i].maxTemp}}<sup>o</sup></small></div>
+				</div>
+				<div>
+					<div class="detailsofweather"><img src="assets/img/icon-umberella.png" alt=""></div>
+					<div class="detailsofweather">{{weatherItems[i].humidity}}%</div>
+				</div>
+				<div>
+					<div class="detailsofweather"><img src="assets/img/icon-wind.png" alt=""></div>
+					<div class="detailsofweather">{{weatherItems[i].wind}}km/h</div>
+				</div>
+			</div>	
+		</div>
+	
+	</div>
+</div>

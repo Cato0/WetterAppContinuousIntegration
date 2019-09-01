@@ -1,0 +1,19 @@
+.CityBox
+	{
+	margin-top: 10px;
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	color: black;
+	text-align: center;
+	/* visibility: hidden; */
+	}
+	
+.divCityBox
+	{
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	width: 220px;
+	text-align: center;
+	}
