@@ -12,10 +12,10 @@ Unit Testing
 
 # Frontend
 
-Angular Frontend. which consists of a graphical user interface and displays the weather data of the current, and the next four days.
+Angular Frontend, which consists of a graphical user interface and displays the weather data of the current, and the next four days.
 
 # Backend
 
 NodeJS Express Server with connection to a MongoDB, in which all the necessary weather data is store.
 
-Accesses Weather API ...
+Accesses Weather API OpenWeather. 
